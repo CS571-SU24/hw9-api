@@ -116,6 +116,14 @@ If you forget to include a `username` or `pin`, the following `400` will be sent
 }
 ```
 
+If a `pin` is not exactly 7 digits, the following `400` will be sent...
+
+```json
+{
+    "msg":  "A pin must exactly be a 7-digit PIN code passed as a string."
+}
+```
+
 If a user by the requested `username` already exists, the following `409` will be sent...
 
 ```json
@@ -124,11 +132,11 @@ If a user by the requested `username` already exists, the following `409` will b
 }
 ```
 
-If the `username` is longer than 64 characters or if the `pin` is longer than 128 characters, the following `413` will be sent...
+If the `username` is longer than 64 characters, the following `413` will be sent...
 
 ```json
 {
-    "msg": "'username' must be 64 characters or fewer and 'pin' must be 128 characters or fewer"
+    "msg": "'username' must be 64 characters or fewer"
 }
 ```
 
